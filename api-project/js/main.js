@@ -1,6 +1,6 @@
 import '../css/style.css'
 
-const URL = `http://shibe.online/api/shibes?count=[1-100]&urls=[true/false]&httpsUrls=[true/false]`;
+const URL = `https://api.ebird.org/v2/data/obs/{{regionCode}}/recent`;
 
 //goes before anything bfore getting data from api
 async function getData(URL){
@@ -12,11 +12,10 @@ async function getData(URL){
         }
         //convert response to json
         const data = await response.json();
-        document.querySelector("h1").textContent = data.content;
+        document.querySelector(".ee"). = data.content;
         console.log(data.content);
     } catch (error) {
         console.log(error, "uhoh")
-        document.querySelector("h1").textContent = "awnah";
     }
 }
 getData(URL);
