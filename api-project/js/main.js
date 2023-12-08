@@ -8,11 +8,11 @@ async function getData(URL){
             throw new Error(response.statusText);
         }
         const data = await response.json();
-        document.querySelector("h1").textContent = data.data.country;
-        
-        array.forEach(element => {console.log(data.data.country)
-          
-        });
+        document.querySelector("h1").textContent = data.msg;
+        console.log(data.msg);
+        console.log(data.data);
+        let data_arr = data.data;
+        data_arr.forEach((object)=> console.log(object.country))
 
     } catch (error) {
         console.log(error, "please try again later")
@@ -20,6 +20,7 @@ async function getData(URL){
     }
 }
 getData(URL);
+
 
 // const fetch = require('node-fetch');
 
