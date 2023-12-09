@@ -3,7 +3,7 @@ const DOMSelectors = {
     btn_container: document.querySelector(".btn_container"),
     cards: document.querySelectorAll(".card"), 
     card_container: document.querySelector(".card_container"),
-    h2: document.querySelectorAll("h2"), 
+    h3: document.querySelectorAll("h3"), 
     image: document.querySelectorAll("img"),
 }
 

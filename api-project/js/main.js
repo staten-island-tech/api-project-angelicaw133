@@ -5,12 +5,11 @@ import {DOMSelectors} from './dom'
 function make_cards(arr) {
   arr.forEach((object) => {
     DOMSelectors.container.insertAdjacentHTML(
-    "afterbegin"`<div class="btn_container">
+   'afterbegin', `<div class="btn_container">
         </div>
         <div class="card_container">
           <div class="card">
-            <h2>${object.data.country}</h2>
-            <img src="" alt="">
+            <h3>${object.country}</h3>
           </div>
         </div>`
   )})};
@@ -24,13 +23,15 @@ async function getData(URL) {
       throw new Error(response.statusText);
     }
     const data = await response.json();
-    console.log(data.msg);
-    console.log(data.data);
+
     make_cards(data.data);
-    let data_arr = data.data;
-    data_arr.forEach((object)=> console.log(object.country))
-    make_cards(data.data.country);
-  } catch (error) {
+    
+
+    // let data_arr = data.data;
+    // data_arr.forEach((object)=> console.log(object.country))
+  } 
+    
+    catch (error) {
     console.log(error, "please try again later");
     document.querySelector("h1").textContent = "please try again later";
   }
