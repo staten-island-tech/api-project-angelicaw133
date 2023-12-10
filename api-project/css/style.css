@@ -35,7 +35,7 @@ h1 {
   color: var(--text);
   font-size: var(--h1);
   text-align: center;
-  margin: 6rem;
+  margin: 4rem;
 }
 
 h3 {
@@ -58,8 +58,19 @@ h3 {
   border: .3rem solid var(--borders);
   margin: 1rem;
   padding: 1rem;
-  max-width: 28vw;
+  width: 30vw;
+  height: 35vh;
+  /* min-width: 28vw;
+  max-width: 30vw;
+  min-height: 30vh; */
   text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  
 }
 
 .card:hover {
