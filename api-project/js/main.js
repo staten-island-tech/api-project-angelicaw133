@@ -5,7 +5,7 @@ import {DOMSelectors} from './dom'
 function make_cards(arr) {
   arr.forEach((object) => {
     DOMSelectors.container.insertAdjacentHTML(
-   'afterbegin', `<div class="btn_container">
+   'beforeend', `<div class="btn_container">
         </div>
         <div class="card_container">
           <div class="card">
@@ -22,6 +22,14 @@ async function getData(URL) {
     }
     const data = await response.json();
     make_cards(data.data);
+    console.log(data.data)
+
+    let cards = document.querySelectorAll (".card");
+    cards.forEach((card) => card.addEventListener("click", function(){
+
+      console.log("workds");
+    }))
+
   } 
     catch (error) {
     console.log(error, "please try again later");
@@ -29,3 +37,5 @@ async function getData(URL) {
   }
 }
 getData(URL);
+
+fucntion 
