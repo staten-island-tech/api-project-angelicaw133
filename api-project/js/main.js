@@ -37,6 +37,10 @@ async function getData_country(URLA) {
 }
 getData_country(URLA);
 
+function clear_screen() {
+  
+}
+
 // var name = 'San Francisco'
 // $.ajax({
 //     method: 'GET',
@@ -51,17 +55,17 @@ getData_country(URLA);
 //     }
 // });
 
-const request = require('request');
+// const request = require('request');
 
-var name = 'San Francisco'
-request.get({
-  url: 'https://api.api-ninjas.com/v1/city?name=' + name,
-  headers: {
-    'X-Api-Key': '8mj8svu38m7v53EKnkOMGw==XUn3AP2GywfTbdil'
-  },
-}, function(error, response, body) {
-  if(error) return console.error('Request failed:', error);
-  else if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
-  else console.log(body)
-});
+// var name = 'San Francisco'
+// request.get({
+//   url: 'https://api.api-ninjas.com/v1/city?name=' + name,
+//   headers: {
+//     'X-Api-Key': '8mj8svu38m7v53EKnkOMGw==XUn3AP2GywfTbdil'
+//   },
+// }, function(error, response, body) {
+//   if(error) return console.error('Request failed:', error);
+//   else if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
+//   else console.log(body)
+// });
 
