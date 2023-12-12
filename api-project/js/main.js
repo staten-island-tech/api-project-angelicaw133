@@ -13,16 +13,15 @@ function make_cards(arr) {
           </div>
         </div>`
   )})};
-const URL = `https://countriesnow.space/api/v0.1/countries`;
-async function getData(URL) {
+const URLA = `https://countriesnow.space/api/v0.1/countries`;
+async function getData_country(URLA) {
   try {
-    const response = await fetch(URL);
+    const response = await fetch(URLA);
     if (response.status != 200) {
       throw new Error(response.statusText);
     }
     const data = await response.json();
     make_cards(data.data);
-    console.log(data.data)
 
     let cards = document.querySelectorAll (".card");
     cards.forEach((card) => card.addEventListener("click", function(){
@@ -36,6 +35,38 @@ async function getData(URL) {
     document.querySelector("h1").textContent = "please try again later";
   }
 }
-getData(URL);
+getData_country(URLA);
 
-fucntion 
+// var name = 'San Francisco'
+// $.ajax({
+//     method: 'GET',
+//     url: 'https://api.api-ninjas.com/v1/city?name=' + name,
+//     headers: { 'X-Api-Key': '8mj8svu38m7v53EKnkOMGw==XUn3AP2GywfTbdil'},
+//     contentType: 'application/json',
+//     success: function(result) {
+//         console.log(result);
+//     },
+//     error: function ajaxError(jqXHR) {
+//         console.error('Error: ', jqXHR.responseText);
+//     }
+// });
+
+const request = require('request');
+
+var name = 'San Francisco'
+request.get({
+  url: 'https://api.api-ninjas.com/v1/city?name=' + name,
+  headers: {
+    'X-Api-Key': '8mj8svu38m7v53EKnkOMGw==XUn3AP2GywfTbdil'
+  },
+}, function(error, response, body) {
+  if(error) return console.error('Request failed:', error);
+  else if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
+  else console.log(body)
+});
+
+async function getData_city() {
+  try {
+    req
+  }
+}
