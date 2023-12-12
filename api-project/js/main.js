@@ -65,8 +65,3 @@ request.get({
   else console.log(body)
 });
 
-async function getData_city() {
-  try {
-    req
-  }
-}
