@@ -25,7 +25,8 @@ async function getData_country(URLA) {
 
     let cards = document.querySelectorAll (".card");
     cards.forEach((card) => card.addEventListener("click", function(){
-
+      let new_scr = ".card".textContent;
+      card_click(new_scr);
       console.log("workds");
     }))
 
@@ -37,8 +38,14 @@ async function getData_country(URLA) {
 }
 getData_country(URLA);
 
-function clear_screen() {
-  
+function clear_fields() {
+    const element = document.querySelector("body");
+    element.innerHTML = ""
+}
+
+function card_click() {
+  clear_fields();
+
 }
 
 // var name = 'San Francisco'
