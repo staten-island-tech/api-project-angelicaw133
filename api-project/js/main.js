@@ -38,15 +38,14 @@ async function getData_country(URLA) {
 }
 getData_country(URLA);
 
-function clear_fields() {
-    const element = document.querySelector("body");
-    element.innerHTML = ""
-}
-
-function card_click() {
+function card_click(name) {
   clear_fields();
-
+  DOMSelectors.container.insertAdjacentHTML(
+      'beforeend', 
+  )
 }
+
+//use absolute postioning in css 
 
 // var name = 'San Francisco'
 // $.ajax({
