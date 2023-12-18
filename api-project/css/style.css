@@ -10,6 +10,7 @@
   --card: var(--gray);
   --borders: var(--black);
   --effcts: var(--beige);
+  --popup: var(--cerulean);
 
   /*typography*/
   --h1: 11.391rem;
@@ -41,6 +42,14 @@ h1 {
 h3 {
   color: var(--text);
   font-size: var(--h3);
+}
+
+.pop_up{
+  background-color: var(--cerulean);
+  width: 30vw;
+  height: 65vh;
+  position: absolute;
+  top: 20vh;
 }
 
 .container {
@@ -76,4 +85,6 @@ h3 {
 .card:hover {
   transform: scale(1.05);
   background-color: var(--effcts);
+
+
 }

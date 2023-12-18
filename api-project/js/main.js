@@ -39,9 +39,11 @@ async function getData_country(URLA) {
 getData_country(URLA);
 
 function card_click(name) {
-  clear_fields();
-  DOMSelectors.container.insertAdjacentHTML(
-      'beforeend', 
+  DOMSelectors.pop_up.insertAdjacentHTML(
+      'beforeend', `
+      <h2 class="popup2">${name}</h2>
+      <h3 class="popup3"></h3>
+      <h4 class="popup4"></h4>`
   )
 }
 
