@@ -4,12 +4,14 @@
   --green: #70a9a1;
   --gray: #cfd7c7;
   --beige: #f6f1d1;
+  --white: #ffffff; 
+  --off-white: #ededed;
 
   --bgc: var(--green);
   --text: var(--black);
-  --card: var(--gray);
+  --card: var(--off-white);
   --borders: var(--black);
-  --effcts: var(--beige);
+  --effcts: var(--white);
 
   /*typography*/
   --h1: 11.391rem;
@@ -58,8 +60,8 @@ h3 {
   border: .3rem solid var(--borders);
   margin: 1rem;
   padding: 1rem;
-  width: 30vw;
-  height: 35vh;
+  width: 28vw;
+  height: 30vh;
   /* min-width: 28vw;
   max-width: 30vw;
   min-height: 30vh; */
