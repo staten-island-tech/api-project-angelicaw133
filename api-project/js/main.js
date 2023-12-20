@@ -5,13 +5,12 @@ import {DOMSelectors} from './dom'
 function make_cards(arr) {
   arr.forEach((object) => {
     DOMSelectors.container.insertAdjacentHTML(
-   'beforeend', `<div class="btn_container">
+   'beforeend', `
         </div>
         <div class="card_container">
           <div class="card">
             <h3>${object.country}</h3>
-          </div>
-        </div>`
+          </div>`
   )})};
 const URLA = `https://countriesnow.space/api/v0.1/countries`;
 async function getData_country(URLA) {
@@ -25,8 +24,7 @@ async function getData_country(URLA) {
 
     let cards = document.querySelectorAll (".card");
     cards.forEach((card) => card.addEventListener("click", function(){
-      let new_scr = ".card".textContent;
-      card_click(new_scr);
+      card_click(card.textContent, data);
       console.log("workds");
     }))
 
@@ -36,18 +34,25 @@ async function getData_country(URLA) {
     document.querySelector("h1").textContent = "please try again later";
   }
 }
+
 getData_country(URLA);
 
-function card_click(name) {
-  DOMSelectors.pop_up.insertAdjacentHTML(
-      'beforeend', `
-      <h2 class="popup2">${name}</h2>
-      <h3 class="popup3"></h3>
-      <h4 class="popup4"></h4>`
+function clear_scr() {
+  const element = document.querySelector(".container");
+    element.innerHTML = ""
+}
+
+function card_click(title, country) {
+  clear_scr();
+  DOMSelectors.container.insertAdjacentHTML(
+      'beforeend', `<div class="pop_up">
+      <h2 class="popup2">${title}</h2>
+      <h3 class="popup3">${country.data}</h3>
+      <h4 class="popup4"></h4>
+      </div>`
   )
 }
 
-//use absolute postioning in css 
 
 // var name = 'San Francisco'
 // $.ajax({
