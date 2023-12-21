@@ -53,7 +53,6 @@ function card_click(title, country) {
   )
 }
 
-
 // var name = 'San Francisco'
 // $.ajax({
 //     method: 'GET',
@@ -81,4 +80,3 @@ function card_click(title, country) {
 //   else if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
 //   else console.log(body)
 // });
-
