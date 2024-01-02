@@ -37,11 +37,6 @@ async function getData_country(URLA) {
 
 getData_country(URLA);
 
-function clear_scr() {
-  const element = document.querySelector(".container");
-    element.innerHTML = ""
-}
-
 function card_click(title, country) {
   clear_scr();
   DOMSelectors.container.insertAdjacentHTML(
@@ -53,6 +48,26 @@ function card_click(title, country) {
   )
 }
 
+const URLB = `https://restcountries.com/v3.1/name/deutschland`;
+async function getData_ci(URLB) {
+  try {
+    const response = await fetch(URLB);
+    if (response.status != 200) {
+      throw new Error(response.statusText);
+    }
+    const data_ = await response.json();
+    console.log(data_);
+  }
+  catch (error) {
+    console.log(error, "please try again");
+  }
+}
+getData_ci(URLB);
+
+function clear_scr() {
+  const element = document.querySelector(".container");
+    element.innerHTML = ""
+}
 // var name = 'San Francisco'
 // $.ajax({
 //     method: 'GET',
