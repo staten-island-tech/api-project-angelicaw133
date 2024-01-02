@@ -37,8 +37,10 @@ async function getData_country(URLA) {
 
 getData_country(URLA);
 
-function card_click(title, country) {
+function card_click(title, ) {
   clear_scr();
+  getData_ci(URLB);
+  
   DOMSelectors.container.insertAdjacentHTML(
       'beforeend', `<div class="pop_up">
       <h2 class="popup2">${title}</h2>
@@ -56,13 +58,13 @@ async function getData_ci(URLB) {
       throw new Error(response.statusText);
     }
     const data_ = await response.json();
-    console.log(data_);
+    console.log(data_.capital)
   }
   catch (error) {
     console.log(error, "please try again");
   }
 }
-getData_ci(URLB);
+
 
 function clear_scr() {
   const element = document.querySelector(".container");
