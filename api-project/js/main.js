@@ -11,6 +11,7 @@ function make_cards(arr) {
           <div class="card">
             <h3>${object.strCategory}</h3>
             <img src=${object.strCategoryThumb} alt="">
+            <button class="more">See Foods</button>
           </div>`
   )})};
 const URLA = `https://www.themealdb.com/api/json/v1/1/categories.php`;
@@ -22,10 +23,11 @@ async function getData(URLA) {
     }
     const data = await response.json();
     make_cards(data.categories);
+    
 
-    let cards = document.querySelectorAll (".card");
-    cards.forEach((card) => card.addEventListener("click", function(){
-      let category = card.textContent
+    let cards = document.querySelectorAll (".more");
+    cards.forEach((card) => card.addEventListener("click", function(event){
+      let category = event.target.previousSibling.previousSibling.previousSibling.previousSibling.textContent;
       card_click(data2.meals);
       console.log(category);
     }))
@@ -55,7 +57,7 @@ function card_click(arr2){
 }
 
 
-const URLB = `https://www.themealdb.com/api/json/v1/1/filter.php?c=beef`; 
+const URLB = `https://www.themealdb.com/api/json/v1/1/filter.php?c=`; 
 
 async function getData_meals(URLB) {
   try {
