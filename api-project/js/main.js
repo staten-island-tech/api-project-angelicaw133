@@ -9,23 +9,25 @@ function make_cards(arr) {
         </div>
         <div class="card_container">
           <div class="card">
-            <h3>${object.country}</h3>
+            <h3>${object.strCategory}</h3>
+            <img src=${object.strCategoryThumb} alt="">
           </div>`
   )})};
-const URLA = `https://countriesnow.space/api/v0.1/countries`;
-async function getData_country(URLA) {
+const URLA = `https://www.themealdb.com/api/json/v1/1/categories.php`;
+async function getData(URLA) {
   try {
     const response = await fetch(URLA);
     if (response.status != 200) {
       throw new Error(response.statusText);
     }
     const data = await response.json();
-    make_cards(data.data);
+    make_cards(data.categories);
 
     let cards = document.querySelectorAll (".card");
     cards.forEach((card) => card.addEventListener("click", function(){
-      card_click(card.textContent, data);
-      console.log("workds");
+      let category = card.textContent
+      card_click(data2.meals);
+      console.log(category);
     }))
 
   } 
@@ -35,65 +37,42 @@ async function getData_country(URLA) {
   }
 }
 
-getData_country(URLA);
+getData(URLA);
 
-function card_click(title, ) {
+// function card_click (category_name, meal_data) {
+function card_click(arr2){
   clear_scr();
-  getData_ci(URLB);
+  arr2.forEach((object)=>{DOMSelectors.container.insertAdjacentHTML(
+    'beforeend', `
+    </div>
+    <div class="card_container">
+      <div class="card">
+        <h3>${object.strMeal}</h3>
+        <img src=${object.strMealThumb} alt="">
+      </div>`)}
   
-  DOMSelectors.container.insertAdjacentHTML(
-      'beforeend', `<div class="pop_up">
-      <h2 class="popup2">${title}</h2>
-      <h3 class="popup3">${country.data}</h3>
-      <h4 class="popup4"></h4>
-      </div>`
   )
 }
 
-const URLB = `https://restcountries.com/v3.1/name/deutschland`;
-async function getData_ci(URLB) {
+
+const URLB = `https://www.themealdb.com/api/json/v1/1/filter.php?c=beef`; 
+
+async function getData_meals(URLB) {
   try {
     const response = await fetch(URLB);
     if (response.status != 200) {
       throw new Error(response.statusText);
     }
-    const data_ = await response.json();
-    console.log(data_.capital)
-  }
-  catch (error) {
-    console.log(error, "please try again");
+    const data2 = await response.json();
+  } 
+    catch (error) {
+    console.log(error, "please try again later");
+    document.querySelector("h1").textContent = "please try again later";
   }
 }
-
 
 function clear_scr() {
   const element = document.querySelector(".container");
     element.innerHTML = ""
 }
-// var name = 'San Francisco'
-// $.ajax({
-//     method: 'GET',
-//     url: 'https://api.api-ninjas.com/v1/city?name=' + name,
-//     headers: { 'X-Api-Key': '8mj8svu38m7v53EKnkOMGw==XUn3AP2GywfTbdil'},
-//     contentType: 'application/json',
-//     success: function(result) {
-//         console.log(result);
-//     },
-//     error: function ajaxError(jqXHR) {
-//         console.error('Error: ', jqXHR.responseText);
-//     }
-// });
-
-// const request = require('request');
-
-// var name = 'San Francisco'
-// request.get({
-//   url: 'https://api.api-ninjas.com/v1/city?name=' + name,
-//   headers: {
-//     'X-Api-Key': '8mj8svu38m7v53EKnkOMGw==XUn3AP2GywfTbdil'
-//   },
-// }, function(error, response, body) {
-//   if(error) return console.error('Request failed:', error);
-//   else if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
-//   else console.log(body)
-// });
+getData_meals(URLB);
