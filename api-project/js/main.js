@@ -6,15 +6,13 @@ function make_cards(arr) {
   arr.forEach((object) => {
     DOMSelectors.container.insertAdjacentHTML(
       "beforeend",
-      `
-        <div class="card_container">
+      `<div class="card_container">
           <div class="card">
             <h3>${object.strCategory}</h3>
-            <img src=${object.strCategoryThumb} alt="">
+            <img src=${object.strCategoryThumb} alt="${"image of " + object.strCategory}">
             <button class="more">See Foods</button>
           </div>
           </div>`
-
     );
   });
 }
@@ -41,12 +39,9 @@ async function getData(URLA) {
   } catch (error) {
     console.log(error, "please try again later");
     document.querySelector("h1").textContent = "please try again later";
-  }
-}
-
+  }}
 getData(URLA);
 
-// function card_click (category_name, meal_data) {
 function getData_more(category){
   const URLBf = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
   async function getData_meals(URLB) {
@@ -57,7 +52,11 @@ function getData_more(category){
       }
       const data2 = await response.json();
       console.log(data2);
+      document.querySelector("h1").textContent= `${category}`
       card_click(data2.meals);
+      
+
+  
     } catch (error) {
       console.log(error, "please try again later");
       document.querySelector("h1").textContent = "please try again later";
@@ -71,10 +70,11 @@ function getData_more(category){
     DOMSelectors.container.insertAdjacentHTML(
       "beforeend",
       `
+      <button class="resetall"></button>
     <div class="card_container">
       <div class="card2">
         <h4>${object.strMeal}</h4>
-        <img src=${object.strMealThumb} alt="${object.strMeal}">
+        <img src=${object.strMealThumb} alt="${"image of " + object.strMeal}">
       </div>
       </div>`
     );
