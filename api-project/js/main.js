@@ -7,13 +7,14 @@ function make_cards(arr) {
     DOMSelectors.container.insertAdjacentHTML(
       "beforeend",
       `
-        </div>
         <div class="card_container">
           <div class="card">
             <h3>${object.strCategory}</h3>
             <img src=${object.strCategoryThumb} alt="">
             <button class="more">See Foods</button>
+          </div>
           </div>`
+
     );
   });
 }
@@ -69,11 +70,12 @@ function getData_more(category){
       arr2.forEach((object) => {
     DOMSelectors.container.insertAdjacentHTML(
       "beforeend",
-      `</div>
+      `
     <div class="card_container">
-      <div class="card">
-        <h3>${object.strMeal}</h3>
-        <img src=${object.strMealThumb} alt=${object.strMeal}>
+      <div class="card2">
+        <h4>${object.strMeal}</h4>
+        <img src=${object.strMealThumb} alt="${object.strMeal}">
+      </div>
       </div>`
     );
   });

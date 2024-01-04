@@ -46,16 +46,9 @@ h3 {
   font-size: var(--h3);
 }
 
-.pop_up{
-  background-color: var(--cerulean);
-  width: 30vw;
-  height: 65vh;
-  position: absolute;
-  top: 20vh;
-}
-
-.popup2 {
-  font-size: var(--h2);
+h4 {
+  color: var(--text);
+  font-size: 3.375rem;
 }
 
 .container {
@@ -73,10 +66,7 @@ h3 {
   border: .3rem solid var(--borders);
   margin: 1rem;
   padding: 1rem;
-  width: 28vw;
-  /* min-width: 28vw;
-  max-width: 30vw;
-  min-height: 30vh; */
+  width: 27vw;
   text-align: center;
   align-items: center;
   display: flex;
@@ -87,15 +77,33 @@ h3 {
   
 }
 
-.img{
-  display: block;
-	width: 100%;
+.card2 {
+  background: var(--card);
+  border-radius: .5rem;
+  border: .3rem solid var(--borders);
+  margin: .5rem;
+  padding: 1rem;
+  width: 23vw;
+  height: 68vh;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
+
 .card:hover {
   transform: scale(1.05);
   background-color: var(--effcts);
 }
-
+img {
+  width: 100%;
+  max-height: fit-content;
+  overflow: hidden;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;
