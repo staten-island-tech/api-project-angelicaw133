@@ -17,7 +17,7 @@
   --h1: 11.391rem;
   --h2: 7.594rem;
   --h3: 5.063rem;
-  --h4: 3.375rem;
+  --h4: 3.375rem; 
   --p: 1rem;
 
 }
@@ -103,6 +103,7 @@ img {
   max-height: fit-content;
   overflow: hidden;
 }
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -111,5 +112,22 @@ button {
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
+  background: var(--card);
+}
+
+@media screen and (max-width:1000px) {
+  .card, .card2, body {
+      width: 40%;
+  }
+  h1{font-size: var(--h2);}
+  
+}
+
+@media  screen and (max-width:812px) {
+  .card, .card2, body  {
+      width: 100%;
+  }
+
+h1{font-size: var(--h2);}
+
 }

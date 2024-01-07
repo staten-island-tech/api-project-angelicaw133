@@ -70,7 +70,6 @@ function getData_more(category){
     DOMSelectors.container.insertAdjacentHTML(
       "beforeend",
       `
-      <button class="resetall"></button>
     <div class="card_container">
       <div class="card2">
         <h4>${object.strMeal}</h4>
